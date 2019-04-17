@@ -10,3 +10,6 @@ gpuinfo
 
 #large file
 train.csv
+
+#
+.ipynb_checkpoints
