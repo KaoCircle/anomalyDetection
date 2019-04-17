@@ -1,0 +1,12 @@
+# directory for progress report
+report/
+
+# readme for myself
+first_steps
+worknote
+
+#
+gpuinfo
+
+#large file
+train.csv
