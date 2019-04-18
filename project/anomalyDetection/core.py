@@ -1,25 +1,26 @@
 # -*- coding: utf-8 -*-
-from . import helpers
+
+from . import testmodule
 import csv
 from datetime import datetime
 import time
-import numpy as np
-import keras
-from keras.layers import *
-from keras.models import Model
-from sklearn.decomposition import PCA
-import matplotlib.pyplot as plt
-import syslog
+# import numpy as np
+# import keras
+# from keras.layers import *
+# from keras.models import Model
+# from sklearn.decomposition import PCA
+# import matplotlib.pyplot as plt
+# import syslog
 
 
-def load_data(data_file):
+def load_data(file_path):
     print('Load training data.')
     start_time = time.time()
 
     trip = []
     maxlogi, maxlati = -200, -200
     minlogi, minlati = 200, 200
-    with open(data_file, newline='') as csvfile:
+    with open(file_path, newline='') as csvfile:
         R = csv.DictReader(csvfile)
         for row in R:
             item = []
@@ -46,20 +47,14 @@ def load_data(data_file):
     elapsed_time = time.time() - start_time
 
     print('Finished loading.', elapsed_time, 'seconds.')
+    show_flag()
+
+
+def show_flag():
+    """specify the tags of each item in trip"""
     print('0: id, 1: vendor id, 2: picktime, 3: droptime, 4: passenger count,')
     print('5: pick longitude, 6: pick latitude, 7: drop longitude, 8: drop latitude,')
     print('9: store and fwd flag, 10: duration')
 
 
 load_data('train.csv')
-
-
-def get_hmm():
-    """Get a thought."""
-    return 'hmmm...'
-
-
-def hmm():
-    """Contemplation..."""
-    if helpers.get_answer():
-        print(get_hmm())
