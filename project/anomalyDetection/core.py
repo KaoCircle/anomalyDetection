@@ -51,7 +51,7 @@ def load_data(file_path):
 
 
 def show_flag():
-    """specify the tags of each item in trip"""
+    """specify the flag of each item in trip"""
     print('0: id, 1: vendor id, 2: picktime, 3: droptime, 4: passenger count,')
     print('5: pick longitude, 6: pick latitude, 7: drop longitude, 8: drop latitude,')
     print('9: store and fwd flag, 10: duration')
