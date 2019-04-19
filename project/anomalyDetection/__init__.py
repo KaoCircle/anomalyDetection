@@ -1,4 +1,4 @@
-from .core import load_data
+from .core import helloworld
 
 # __all__ = ['']
-a = 123
+helloworld()

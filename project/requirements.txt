@@ -1,2 +1,6 @@
 nose
 sphinx
+numpy >= 1.13
+matplotlib
+setuptools
+scipy
