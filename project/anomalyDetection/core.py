@@ -18,7 +18,12 @@ def helloworld():
 def main():
     taxi_data = dataloader.load_data(DATA_PATH)
     dataloader.show_flag()
-    dataloader.create_am(taxi_data, -74.2, -73.7, 40.5, 40.9, 5, 4)
+    aj = dataloader.create_am(taxi_data, -74.2, -73.7, 40.5, 40.9, 5, 4)
+    print(aj.shape())
+    var = input("Please enter the range: ")
+    while var != "end":
+        print(aj[5][:][var:var+10])
+        var = input("Please enter the range: ")
 
 
 if __name__ == '__main__':
