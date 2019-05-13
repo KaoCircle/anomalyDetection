@@ -16,8 +16,9 @@ def helloworld():
 
 
 def main():
-    dataloader.load_data(DATA_PATH)
+    taxi_data = dataloader.load_data(DATA_PATH)
     dataloader.show_flag()
+    dataloader.create_am(taxi_data, -74.2, -73.7, 40.5, 40.9, 5, 4)
 
 
 if __name__ == '__main__':
