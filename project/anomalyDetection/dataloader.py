@@ -83,16 +83,14 @@ def create_am(trip, minlogi, maxlogi, minlati, maxlati, x_block, y_block):
     # each people traveling is counted in 21*21=441 array
     aj_3d = np.zeros((26, 7, n_input))
     aj_4d = np.zeros((26, 7, n_block+1, n_block+1))
-    print(aj_4d.shape)
-    print("hellow workd")
     for t in trip:
         orig = which_block(t[5], t[6])
         dest = which_block(t[7], t[8])
         date = (t[2]-mintime).days
         week, weekday = divmod(date, 7)
         if week < 26:
-            aj_3d[week][weekday][orig+dest*n_block] += t[4]
-            aj_4d[week][weekday][orig][dest] += t[4]
+            aj_3d[week][weekday][orig+dest*(n_block+1)] += t[4]
+            aj_4d[week][weekday][dest][orig] += t[4]
 
     elapsed_time = time.time() - start_time
     print('Finished generating.', elapsed_time, 'seconds.')

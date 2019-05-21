@@ -19,7 +19,6 @@ def main():
     taxi_data = dataloader.load_data(DATA_PATH)
     dataloader.show_flag()
     aj_3d, aj_4d = dataloader.create_am(taxi_data, -74.2, -73.7, 40.5, 40.9, 5, 4)
-    print(aj_3d.shape, aj_4d.shape)
 
 
 if __name__ == '__main__':
